@@ -15,9 +15,11 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ErrorBoundary>
-      <Component {...pageProps} />
-    </ErrorBoundary>
+    <ApolloProvider client={client}>
+      <ErrorBoundary>
+        <Component {...pageProps} />
+      </ErrorBoundary>
+    </ApolloProvider>
   );
 }
 
